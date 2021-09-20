@@ -34,6 +34,16 @@ p {
   align-items: center;
 }
 
+.column {
+  display: flex;
+  align-items: flex-start;
+    margin-top: 3em;
+}
+
+.message {
+  margin-left: 1em;
+}
+
 .day {
   font-weight: 800;
   margin-right: 1em;
@@ -51,9 +61,6 @@ p {
   cursor: pointer;
 }
 
-.message {
-  margin-top: 3em;
-}
 
 .issues {
   background-color: #3f0d12;
@@ -69,6 +76,10 @@ p {
   padding: 0.2em 1%;
 }
 
+.image {
+  width: 30%;
+  border-radius: 20px;
+}
 
 
 

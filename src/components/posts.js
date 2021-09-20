@@ -44,6 +44,7 @@ const calculateDay = (iso) => {
 function Item({ content }) {
     const [isOpen, setIsOpen] = useState(false);
     console.log(content);
+
     const toggleOpen = () => setIsOpen(!isOpen);
 
     return (
@@ -52,7 +53,7 @@ function Item({ content }) {
                 <motion.p className="day">{calculateDay(content.created_at)}</motion.p>
                 <motion.div className="short">
                     <motion.h2>{content.title}</motion.h2>
-                    <p className="label">{content .label}</p>
+                    <p className="label">{content.label}</p>
                     <AnimatePresence>{isOpen && <Content text={content} />}</AnimatePresence>
                 </motion.div>
             </motion.section>
@@ -61,21 +62,50 @@ function Item({ content }) {
 }
 
 function Content({ text }) {
-    return (
-        <motion.div
-            layout
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{
-                delay: 1,
-                x: { type: "spring", stiffness: 100 },
-                default: { duration: 2 },
-            }}
-        >
-            <p className="message">{text.message}</p>
-        </motion.div>
-    );
+
+    const checkImg = text.images
+
+    if (checkImg.length === 0) {
+        return (
+            <motion.div
+                layout
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{
+                    delay: 1,
+                    x: { type: "spring", stiffness: 100 },
+                    default: { duration: 1 },
+                }}
+            >
+                <p className="message">{text.message}</p>
+            </motion.div>
+        );
+    } else {
+        const checkUrl = text.images[0].formats.medium.url
+        const makeUrl = `https://dev4-personal-blog-backend.herokuapp.com` + checkUrl
+        console.log(makeUrl)
+        return (
+            <motion.div className="column"
+                layout
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{
+                    delay: 1,
+                    x: { type: "spring", stiffness: 100 },
+                    default: { duration: 1 },
+                }}
+            >
+
+                <motion.img initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }} className="image" src={makeUrl}></motion.img>
+                <p className="message">{text.message}</p>
+            </motion.div>
+        );
+    }
+
 }
 
 

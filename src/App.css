@@ -21,6 +21,7 @@ h2 {
 
 p {
   font-family: 'Poppins', sans-serif;
+  line-height: 150%;
 }
 
 .slogan {
@@ -37,7 +38,11 @@ p {
 .column {
   display: flex;
   align-items: flex-start;
-    margin-top: 3em;
+  margin-top: 3em;
+}
+
+.alone {
+  margin-top: 3em;
 }
 
 .message {

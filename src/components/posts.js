@@ -78,7 +78,7 @@ function Content({ text }) {
                     default: { duration: 1 },
                 }}
             >
-                <p className="message">{text.message}</p>
+                <p className="alone">{text.message}</p>
             </motion.div>
         );
     } else {

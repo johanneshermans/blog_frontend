@@ -2,23 +2,8 @@ import React from "react";
 import { useState, useEffect } from "react";
 import { motion, AnimateSharedLayout, AnimatePresence } from "framer-motion";
 
-
-
-
-/**
- * This is an example of animating shared layouts in Framer Motion 2.
- *
- * The open state of each panel is contained locally to that component. Wrapping
- * them all in the same AnimateSharedLayout component allows them all to animate
- * in response to state changes that affect each other's layout.
- *
- * Try removing AnimateSharedLayout to see how that affects the animation.
- */
-
 export default function Posts() {
     const [posts, setPosts] = useState([]);
-
-
     useEffect(() => {
         fetch(`https://dev4-personal-blog-backend.herokuapp.com/posts`)
             .then(response => response.json())
@@ -35,10 +20,21 @@ export default function Posts() {
     );
 }
 
+const monthNames = ["January", "February", "March", "April", "May", "June",
+    "July", "August", "September", "October", "November", "December"
+];
+
 const calculateDay = (iso) => {
     const date = new Date(`${iso}`)
     const day = date.getDate();
     return day
+}
+
+const calculateMonth = (iso) => {
+    const date = new Date(`${iso}`)
+    const monthNumber = date.getMonth();
+    const month = monthNames[monthNumber]
+    return month
 }
 
 function Item({ content }) {
@@ -50,7 +46,11 @@ function Item({ content }) {
     return (
         <motion.div layout onClick={toggleOpen}>
             <motion.section className="flex post__container" id={content.label}>
-                <motion.p className="day">{calculateDay(content.created_at)}</motion.p>
+                <motion.div>
+                    <motion.p className="day">{calculateDay(content.created_at)}</motion.p>
+                    <motion.p className="month">{calculateMonth(content.created_at)}</motion.p>
+                </motion.div>
+
                 <motion.div className="short">
                     <motion.h2>{content.title}</motion.h2>
                     <p className="label">{content.label}</p>
@@ -62,8 +62,13 @@ function Item({ content }) {
 }
 
 function Content({ text }) {
-
     const checkImg = text.images
+    console.log(checkImg)
+    for (let index = 0; index < checkImg.length; index++) {
+        const element = checkImg[index].name;
+        console.log(element)
+    }
+
 
     if (checkImg.length === 0) {
         return (
@@ -82,11 +87,8 @@ function Content({ text }) {
             </motion.div>
         );
     } else {
-        const checkUrl = text.images[0].formats.medium.url
-        const makeUrl = `https://dev4-personal-blog-backend.herokuapp.com` + checkUrl
-        console.log(makeUrl)
         return (
-            <motion.div className="column"
+            <motion.div
                 layout
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
@@ -97,11 +99,16 @@ function Content({ text }) {
                     default: { duration: 1 },
                 }}
             >
+                <p className="alone">{text.message}</p>
+                <motion.div className="images">
+                    {checkImg.map((link) =>
+                        <motion.img initial={{ opacity: 0 }}
+                            key={link.name}
+                            animate={{ opacity: 1 }}
+                            exit={{ opacity: 0 }} className="image" src={link.name}></motion.img>
+                    )}
+                </motion.div>
 
-                <motion.img initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    exit={{ opacity: 0 }} className="image" src={makeUrl}></motion.img>
-                <p className="message">{text.message}</p>
             </motion.div>
         );
     }

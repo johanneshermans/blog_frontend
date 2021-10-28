@@ -4,8 +4,6 @@ body {
   font-family: 'Poppins', sans-serif;
 }
 
-
-
 h1 {
   text-align: center;
   font-size: 12em;
@@ -76,15 +74,48 @@ p {
   border: white solid 2px;
   font-size: 1.5em;
   text-align: center;
-  width: 4em;
+  width: 8em;
   border-radius: 50px;
   padding: 0.2em 1%;
+}
+
+.images {
+  display: flex;
+  align-items: center;
+  margin-top: 1em;
+  justify-content: space-between;
 }
 
 .image {
   width: 30%;
   border-radius: 20px;
 }
+
+.navbar {
+  margin: 2em 0;
+}
+
+.navbar__ul {
+  display: flex;
+  justify-content: center;
+}
+
+.navbar__li {
+  width: 6em;
+  margin: 0 3em;
+  text-align: center;
+  text-decoration: none;
+}
+
+.navlink {
+  text-decoration: none;
+  color: black;
+  border: solid black .15rem;
+  border-radius: 50px;
+  padding: 5% 10%;
+}
+
+
 
 
 

@@ -17,9 +17,29 @@ h2 {
   display: block;
 }
 
+h3 {
+  font-size: 3em;
+  font-weight: 600;
+  display: block;
+}
+
+h4 {
+  margin-top: 2em;
+  font-size: 2em;
+  font-weight: 600;
+  display: block;
+}
+
 p {
   font-family: 'Poppins', sans-serif;
   line-height: 150%;
+  margin-top: 1em;
+}
+
+a {
+    margin-top: .5em;
+    color: white;
+    display: block;
 }
 
 .slogan {

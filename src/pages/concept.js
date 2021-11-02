@@ -25,8 +25,23 @@ const Concept = () => {
             </section>
 
             <section className="post__container">
-                <h3>Deliverables</h3>
-                <p>Will be soon availible</p>
+                <h3>Deliverables + Schedule</h3>
+
+                <section>
+                    <h4>Friday 5 November</h4>
+                    <ul className="list">
+                        <li>Report Unity VS ARKit</li>
+                        <li>Report Interacrive videoclips</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h4>Friday 12 November</h4>
+                    <ul className="list">
+                        <li>Demo AR</li>
+                        <li>First 3D models</li>
+                    </ul>
+                </section>
 
             </section>
 

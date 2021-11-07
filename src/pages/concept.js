@@ -30,8 +30,8 @@ const Concept = () => {
                 <section>
                     <h4>Friday 5 November</h4>
                     <ul className="list">
-                        <li>Report Unity VS ARKit</li>
-                        <li>Report Interacrive videoclips</li>
+                        <a href="https://www.yumpu.com/en/document/read/65962592/reserch-report-unity-arkit" target="_blank" rel="noreferrer">Report Unity VS ARKit</a>
+                        <a href="https://www.yumpu.com/en/document/read/65964119/research-report-interactive-videoclips-research-music-videos" target="_blank" rel="noreferrer">Report Interactive videoclips + Music videos</a>
                     </ul>
                 </section>
 

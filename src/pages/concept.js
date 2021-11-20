@@ -31,15 +31,15 @@ const Concept = () => {
                     <h4>Friday 5 November</h4>
                     <ul className="list">
                         <a href="https://www.yumpu.com/en/document/read/65962592/reserch-report-unity-arkit" target="_blank" rel="noreferrer">Report Unity VS ARKit</a>
-                        <a href="https://www.yumpu.com/en/document/read/65964119/research-report-interactive-videoclips-research-music-videos" target="_blank" rel="noreferrer">Report Interactive videoclips + Music videos</a>
+                        <a href="https://www.yumpu.com/en/document/read/65964119/research-report-interactive-videoclips-research-music-videos" target="_blank" rel="noreferrer" à>Report Interactive videoclips + Music videos</a>
                     </ul>
                 </section>
 
                 <section>
-                    <h4>Friday 12 November</h4>
+                    <h4>Friday 20 November</h4>
                     <ul className="list">
-                        <li>Demo AR</li>
-                        <li>First 3D models</li>
+                        <a href="https://www.youtube.com/watch?v=k0Lt2TaQ2DI" target="_blank" rel="noreferrer" à>First AR Demo</a>
+                        <a href="https://www.yumpu.com/en/document/read/65994013/research-report-augmented-reality" target="_blank" rel="noreferrer" à>Report augmented reality</a>
                     </ul>
                 </section>
 
